@@ -3,10 +3,9 @@ As a user, after clicking "Continue as a guest", I want to be taken to a dashboa
 
 ---
 # Plan:
-- [ ] Create `/app/dashboard.html`.
-- [ ] Add a placeholder title like "Dashboard".
+- [x] Create `/app/dashboard.html`.
+- [x] Add a placeholder title like "Dashboard".
 
 ---
 
 # Execution:
-<intentionally left empty>
