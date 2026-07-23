@@ -82,14 +82,16 @@
                 <div id="equipment" class="tab-content">
                     <div class="form-group">
                         <label for="equipment_name">Equipment Name</label>
-                        <select id="equipment_name" name="equipment_name">
+                        <select id="equipment_name" name="equipment_name" required>
+                            <option value="">Select equipment</option>
                             <option value="FORKLIFT TRUCK">FORKLIFT TRUCK</option>
                             <option value="CRANE">CRANE</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="capacity">Capacity</label>
-                        <select id="capacity" name="capacity">
+                        <select id="capacity" name="capacity" required>
+                            <option value="">Select capacity</option>
                             <option value="3 TONS">3 TONS</option>
                             <option value="5 TONS">5 TONS</option>
                             <option value="7 TONS">7 TONS</option>
@@ -97,7 +99,8 @@
                     </div>
                     <div class="form-group">
                         <label for="manufacturer">Manufacturer</label>
-                        <select id="manufacturer" name="manufacturer">
+                        <select id="manufacturer" name="manufacturer" required>
+                            <option value="">Select manufacturer</option>
                             <option value="HELI">HELI</option>
                             <option value="TCM">TCM</option>
                             <option value="CAT">CAT</option>
@@ -105,7 +108,8 @@
                     </div>
                     <div class="form-group">
                         <label for="model">Model</label>
-                        <select id="model" name="model">
+                        <select id="model" name="model" required>
+                            <option value="">Select model</option>
                             <option value="CPCD70">CPCD70</option>
                             <option value="CPCD50">CPCD50</option>
                             <option value="CPCD30">CPCD30</option>
@@ -872,14 +876,16 @@
                     </div>
                     <div class="form-group">
                         <label for="final_result">Final Result</label>
-                        <select id="final_result" name="final_result">
+                        <select id="final_result" name="final_result" required>
+                            <option value="">Select final result</option>
                             <option value="Accepted">Accepted</option>
                             <option value="Rejected">Rejected</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="inspector_name">Inspector Name</label>
-                        <select id="inspector_name" name="inspector_name">
+                        <select id="inspector_name" name="inspector_name" required>
+                            <option value="">Select inspector</option>
                             <option value="John Doe">John Doe</option>
                             <option value="Jane Smith">Jane Smith</option>
                         </select>
@@ -900,148 +906,104 @@
     <script src="../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const generatePdfButton = document.getElementById('generate-pdf-btn');
+            const inspectionForm = document.getElementById('inspection-form');
+            const requiredFieldsSelector = 'input[required], select[required], textarea[required]';
+
+            const updateGenerateButtonState = () => {
+                if (!generatePdfButton || !inspectionForm) {
+                    return;
+                }
+
+                const requiredFields = Array.from(inspectionForm.querySelectorAll(requiredFieldsSelector));
+                const isValid = requiredFields.every((field) => {
+                    if (field.tagName === 'SELECT') {
+                        return field.value !== '';
+                    }
+                    return field.value.trim() !== '';
+                });
+
+                generatePdfButton.disabled = !isValid;
+            };
+
             const textDefaults = {
-                client_name: 'ABC Industrial Ltd.',
-                contact_person: 'Mohamed Al-Sayed',
-                contact_phone: '+966 50 123 4567',
-                location: 'Riyadh Plant - Zone B',
-                certificate_no: 'INS-2026-1042',
-                job_order_no: 'JO-4821',
-                sticker_no: 'STK-7710',
-                dws_no: 'DWS-2204',
-                equipment_serial_no: 'HEL-FT-2048',
-                equipment_id_no: 'ID-77491',
-                tested_load_kg: '3200',
-                notes: 'Routine inspection completed with no major issues. Operator briefing completed and PPE verified.'
+                client_name: '',
+                contact_person: '',
+                contact_phone: '',
+                location: '',
+                certificate_no: '',
+                job_order_no: '',
+                sticker_no: '',
+                dws_no: '',
+                equipment_serial_no: '',
+                equipment_id_no: '',
+                tested_load_kg: '',
+                notes: ''
             };
 
             const dateDefaults = {
-                inspection_date: '2026-07-23',
-                issue_date: '2026-07-23',
-                next_inspection_date: '2026-08-23',
-                manufacturing_date: '2024-01-15'
+                inspection_date: '',
+                issue_date: '',
+                next_inspection_date: '',
+                manufacturing_date: ''
             };
 
             const selectDefaults = {
-                equipment_name: 'FORKLIFT TRUCK',
-                capacity: '5 TONS',
-                manufacturer: 'HELI',
-                model: 'CPCD70',
-                final_result: 'Accepted',
-                inspector_name: 'John Doe'
+                equipment_name: '',
+                capacity: '',
+                manufacturer: '',
+                model: '',
+                final_result: '',
+                inspector_name: ''
             };
 
-            const radioDefaults = {
-                safety_barricades: 'pass',
-                safety_access: 'pass',
-                safety_jsa: 'pass',
-                safety_hazards: 'pass',
-                safety_ground: 'pass',
-                safety_lighting: 'pass',
-                safety_ppe: 'pass',
-                safety_engine: 'pass',
-                safety_loto: 'pass',
-                safety_energy: 'pass',
-                safety_parking: 'pass',
-                safety_fire: 'pass',
-                safety_briefing: 'pass',
-                safety_tools: 'pass',
-                doc_manual: 'pass',
-                doc_maintenance: 'pass',
-                doc_prev_cert: 'pass',
-                doc_load_test: 'pass',
-                doc_training: 'pass',
-                doc_regulations: 'pass',
-                doc_labels: 'pass',
-                visual_chassis: 'pass',
-                visual_guard: 'pass',
-                visual_forks: 'pass',
-                visual_mast: 'pass',
-                visual_carriage: 'pass',
-                visual_counterweight: 'pass',
-                mast_chains: 'pass',
-                mast_rollers: 'pass',
-                mast_lifting: 'pass',
-                mast_tilt: 'pass',
-                mast_cylinders: 'pass',
-                hydraulic_hoses: 'pass',
-                hydraulic_pump: 'pass',
-                hydraulic_fluid: 'pass',
-                hydraulic_valve: 'pass',
-                power_fuel: 'pass',
-                power_engine: 'pass',
-                power_fuel_leaks: 'pass',
-                power_exhaust: 'pass',
-                power_cooling: 'pass',
-                power_electric: 'pass',
-                power_battery: 'pass',
-                power_hours: 'pass',
-                power_cables: 'pass',
-                power_charger: 'pass',
-                transmission_operation: 'pass',
-                transmission_axle: 'pass',
-                transmission_brake: 'pass',
-                transmission_parking_brake: 'pass',
-                steering_free_play: 'pass',
-                steering_operation: 'pass',
-                steering_noise: 'pass',
-                wheel_tire_wear: 'pass',
-                wheel_type: 'pass',
-                wheel_nuts: 'pass',
-                wheel_rim: 'pass',
-                wheel_lights: 'pass',
-                wheel_horn: 'pass',
-                wheel_reverse_alarm: 'pass',
-                wheel_wiring: 'pass',
-                wheel_battery_isolation: 'pass',
-                safety_feature_belt: 'pass',
-                safety_feature_seat: 'pass',
-                safety_feature_emergency: 'pass',
-                safety_feature_fire: 'pass',
-                safety_feature_mirrors: 'pass',
-                safety_feature_backrest: 'pass',
-                safety_feature_warning: 'pass',
-                functional_start_stop: 'pass',
-                functional_lifting: 'pass',
-                functional_steering: 'pass',
-                functional_braking: 'pass',
-                functional_noise: 'pass',
-                load_rated: 'pass',
-                load_stability: 'pass',
-                load_drift: 'pass',
-                load_fork_deflection: 'pass',
-                ndt_performed: 'na',
-                ndt_results: 'na',
-                final_assessment: 'pass',
-                final_defects: 'pass'
-            };
-
-            Object.entries(textDefaults).forEach(([name, value]) => {
-                const field = document.getElementById(name) || document.querySelector(`[name="${name}"]`);
-                if (field && (field.tagName !== 'SELECT')) {
-                    field.value = value;
-                }
-            });
-
-            Object.entries(dateDefaults).forEach(([name, value]) => {
-                const field = document.getElementById(name) || document.querySelector(`[name="${name}"]`);
-                if (field) {
-                    field.value = value;
-                }
-            });
-
-            Object.entries(selectDefaults).forEach(([name, value]) => {
-                const field = document.getElementById(name) || document.querySelector(`[name="${name}"]`);
-                if (field && field.tagName === 'SELECT') {
-                    field.value = value;
-                }
-            });
-
-            Object.entries(radioDefaults).forEach(([name, value]) => {
-                const radios = document.querySelectorAll(`input[type="radio"][name="${name}"]`);
-                radios.forEach((radio) => {
-                    radio.checked = radio.value === value;
+            const resetFormDefaults = () => {
+                Object.entries(textDefaults).forEach(([name, value]) => {
+                    const field = document.getElementById(name) || document.querySelector(`[name="${name}"]`);
+                    if (field && field.tagName !== 'SELECT') {
+                        field.value = value;
+                    }
                 });
+
+                Object.entries(dateDefaults).forEach(([name, value]) => {
+                    const field = document.getElementById(name) || document.querySelector(`[name="${name}"]`);
+                    if (field) {
+                        field.value = value;
+                    }
+                });
+
+                Object.entries(selectDefaults).forEach(([name, value]) => {
+                    const field = document.getElementById(name) || document.querySelector(`[name="${name}"]`);
+                    if (field && field.tagName === 'SELECT') {
+                        field.value = value;
+                    }
+                });
+
+                document.querySelectorAll('select').forEach((select) => {
+                    if (select.value === '' && select.options.length) {
+                        select.selectedIndex = 0;
+                    }
+                });
+
+                document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+                    const group = document.querySelectorAll(`input[type="radio"][name="${radio.name}"]`);
+                    if (!group.length) {
+                        return;
+                    }
+
+                    const naOption = Array.from(group).find((option) => option.value === 'na');
+                    group.forEach((option) => {
+                        option.checked = option === naOption;
+                    });
+                });
+            };
+
+            resetFormDefaults();
+            updateGenerateButtonState();
+
+            inspectionForm.querySelectorAll(requiredFieldsSelector).forEach((field) => {
+                field.addEventListener('input', updateGenerateButtonState);
+                field.addEventListener('change', updateGenerateButtonState);
             });
 
             const addDeficiencyBtn = document.getElementById('add-deficiency-btn');
@@ -1078,28 +1040,6 @@
                     }
                 });
 
-                if (!deficienciesRows.querySelector('.deficiency-row')) {
-                    deficiencyCounter++;
-                    const seededRow = document.createElement('div');
-                    seededRow.classList.add('deficiency-row');
-                    seededRow.innerHTML = `
-                        <div class="form-group">
-                            <label>Deficiency #${deficiencyCounter}</label>
-                            <input type="text" name="deficiency_desc[]" value="Hydraulic line shows minor seepage" placeholder="Description">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="deficiency_action[]" value="Replace line and re-test pressure" placeholder="Corrective Action">
-                        </div>
-                        <div class="form-group">
-                            <select name="deficiency_status[]">
-                                <option value="Open" selected>Open</option>
-                                <option value="Closed">Closed</option>
-                            </select>
-                        </div>
-                        <button type="button" class="btn btn-danger remove-deficiency-btn">Remove</button>
-                    `;
-                    deficienciesRows.appendChild(seededRow);
-                }
             }
 
             const attachmentsInput = document.getElementById('attachments-input');
