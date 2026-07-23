@@ -6,20 +6,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <title>New Inspection - Inspection Tool</title>
+    <title>New Inspection - Hydro Inspection Platform</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="dashboard-container">
-        <div class="sidebar">
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="users.html">Users</a></li>
-                <li><a href="inspection.html">Inspection Certificates</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </div>
         <div class="main-content">
             <h1>New Inspection Certificate</h1>
             <form id="inspection-form">
@@ -139,40 +130,700 @@
                 </div>
                 <div id="checklist" class="tab-content">
                     <div class="checklist-group">
-                        <h3>Visual Inspection</h3>
+                        <h3>Safety & Site Preparation</h3>
                         <div class="checklist-item">
-                            <span class="checklist-item-desc">Check for cracks or damage on chassis</span>
+                            <span class="checklist-item-desc">Barricades and warning signs in place</span>
                             <div class="checklist-item-opts">
-                                <label><input type="radio" name="chassis_check" value="pass"> Pass</label>
-                                <label><input type="radio" name="chassis_check" value="fail"> Fail</label>
-                                <label><input type="radio" name="chassis_check" value="na"> N/A</label>
+                                <label class="checklist-option pass"><input type="radio" name="safety_barricades" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_barricades" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_barricades" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
                             </div>
                         </div>
                         <div class="checklist-item">
-                            <span class="checklist-item-desc">Inspect tire condition and pressure</span>
+                            <span class="checklist-item-desc">Access restricted to authorized personnel</span>
                             <div class="checklist-item-opts">
-                                <label><input type="radio" name="tire_check" value="pass"> Pass</label>
-                                <label><input type="radio" name="tire_check" value="fail"> Fail</label>
-                                <label><input type="radio" name="tire_check" value="na"> N/A</label>
+                                <label class="checklist-option pass"><input type="radio" name="safety_access" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_access" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_access" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">JSA / Risk Assessment conducted</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_jsa" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_jsa" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_jsa" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Hazards identified and controlled</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_hazards" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_hazards" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_hazards" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Level, clean ground (no oil, debris, obstacles)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_ground" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_ground" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_ground" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Adequate lighting and ventilation</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_lighting" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_lighting" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_lighting" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">PPE Compliance (Helmet, safety shoes, gloves, goggles, high-vis vest)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_ppe" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_ppe" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_ppe" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Engine off, key removed</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_engine" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_engine" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_engine" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Lockout/Tagout (LOTO) applied</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_loto" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_loto" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_loto" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Energy sources isolated & hydraulic pressure released</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_energy" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_energy" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_energy" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Parking brake engaged</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_parking" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_parking" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_parking" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Fire extinguisher & first aid available</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_fire" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_fire" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_fire" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Safety briefing conducted</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_briefing" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_briefing" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_briefing" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Tools and checklist ready</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_tools" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_tools" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_tools" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
                             </div>
                         </div>
                     </div>
                     <div class="checklist-group">
-                        <h3>Functional Tests</h3>
+                        <h3>Documentation & Compliance</h3>
                         <div class="checklist-item">
-                            <span class="checklist-item-desc">Test brake effectiveness</span>
+                            <span class="checklist-item-desc">Operator manual available</span>
                             <div class="checklist-item-opts">
-                                <label><input type="radio" name="brake_test" value="pass"> Pass</label>
-                                <label><input type="radio" name="brake_test" value="fail"> Fail</label>
-                                <label><input type="radio" name="brake_test" value="na"> N/A</label>
+                                <label class="checklist-option pass"><input type="radio" name="doc_manual" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="doc_manual" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="doc_manual" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
                             </div>
                         </div>
                         <div class="checklist-item">
-                            <span class="checklist-item-desc">Check horn and reverse alarm</span>
+                            <span class="checklist-item-desc">Maintenance records up to date</span>
                             <div class="checklist-item-opts">
-                                <label><input type="radio" name="alarm_test" value="pass"> Pass</label>
-                                <label><input type="radio" name="alarm_test" value="fail"> Fail</label>
-                                <label><input type="radio" name="alarm_test" value="na"> N/A</label>
+                                <label class="checklist-option pass"><input type="radio" name="doc_maintenance" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="doc_maintenance" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="doc_maintenance" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Previous inspection certificates</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="doc_prev_cert" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="doc_prev_cert" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="doc_prev_cert" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Load test certificate (if required)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="doc_load_test" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="doc_load_test" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="doc_load_test" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Operator training records (03rd Party)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="doc_training" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="doc_training" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="doc_training" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Compliance with local regulations (ISO/BS/ASME/SASO)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="doc_regulations" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="doc_regulations" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="doc_regulations" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Safety labels legible</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="doc_labels" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="doc_labels" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="doc_labels" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Visual Structural Inspection</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Chassis/frame condition (cracks, deformation, corrosion)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="visual_chassis" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="visual_chassis" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="visual_chassis" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Overhead guard condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="visual_guard" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="visual_guard" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="visual_guard" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Forks (cracks, bending, wear ≤10%)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="visual_forks" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="visual_forks" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="visual_forks" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Mast structure & welds</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="visual_mast" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="visual_mast" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="visual_mast" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Carriage condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="visual_carriage" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="visual_carriage" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="visual_carriage" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Counterweight secure</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="visual_counterweight" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="visual_counterweight" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="visual_counterweight" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Mast & Lifting System</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Chains (wear, lubrication, tension)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="mast_chains" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="mast_chains" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="mast_chains" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Rollers and guides</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="mast_rollers" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="mast_rollers" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="mast_rollers" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Smooth lifting/lowering</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="mast_lifting" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="mast_lifting" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="mast_lifting" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Tilt function</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="mast_tilt" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="mast_tilt" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="mast_tilt" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Hydraulic cylinders (leaks/damage)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="mast_cylinders" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="mast_cylinders" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="mast_cylinders" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Hydraulic System</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Hoses condition (no leaks/cracks)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="hydraulic_hoses" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="hydraulic_hoses" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="hydraulic_hoses" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Pump operation</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="hydraulic_pump" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="hydraulic_pump" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="hydraulic_pump" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Fluid level/condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="hydraulic_fluid" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="hydraulic_fluid" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="hydraulic_fluid" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Valve response</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="hydraulic_valve" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="hydraulic_valve" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="hydraulic_valve" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Power System</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Fuel Type (Diesel/LPG/Elec.)</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_fuel" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_fuel" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_fuel" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Engine condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_engine" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_engine" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_engine" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Fuel system leaks</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_fuel_leaks" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_fuel_leaks" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_fuel_leaks" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Exhaust system</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_exhaust" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_exhaust" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_exhaust" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Cooling system</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_cooling" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_cooling" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_cooling" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Electric</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_electric" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_electric" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_electric" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Battery condition & charge</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_battery" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_battery" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_battery" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Operating Hours</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_hours" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_hours" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_hours" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Cables/connectors</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_cables" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_cables" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_cables" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Charger function</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="power_charger" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="power_charger" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="power_charger" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Transmission & Brakes</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Transmission operation</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="transmission_operation" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="transmission_operation" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="transmission_operation" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Drive axle condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="transmission_axle" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="transmission_axle" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="transmission_axle" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Service brake performance</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="transmission_brake" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="transmission_brake" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="transmission_brake" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Parking brake effectiveness</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="transmission_parking_brake" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="transmission_parking_brake" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="transmission_parking_brake" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Steering System</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Steering free play</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="steering_free_play" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="steering_free_play" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="steering_free_play" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Smooth operation</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="steering_operation" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="steering_operation" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="steering_operation" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">No leaks or abnormal noise</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="steering_noise" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="steering_noise" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="steering_noise" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Wheels & Tires</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Tire wear/damage</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_tire_wear" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_tire_wear" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_tire_wear" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Correct type</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_type" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_type" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_type" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Wheel nuts tight</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_nuts" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_nuts" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_nuts" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Rim condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_rim" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_rim" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_rim" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Electrical system lights functioning</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_lights" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_lights" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_lights" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Horn working</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_horn" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_horn" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_horn" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Reverse alarm</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_reverse_alarm" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_reverse_alarm" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_reverse_alarm" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Wiring condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_wiring" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_wiring" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_wiring" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Battery isolation switch</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="wheel_battery_isolation" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="wheel_battery_isolation" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="wheel_battery_isolation" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Safety Features</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Seat belt</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_feature_belt" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_feature_belt" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_feature_belt" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Operator seat condition</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_feature_seat" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_feature_seat" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_feature_seat" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Emergency stop</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_feature_emergency" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_feature_emergency" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_feature_emergency" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Fire extinguisher</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_feature_fire" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_feature_fire" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_feature_fire" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Mirrors/visibility</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_feature_mirrors" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_feature_mirrors" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_feature_mirrors" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Load backrest</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_feature_backrest" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_feature_backrest" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_feature_backrest" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Warning systems</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="safety_feature_warning" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="safety_feature_warning" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="safety_feature_warning" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Functional Test</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Start/stop operation</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="functional_start_stop" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="functional_start_stop" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="functional_start_stop" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Lifting & lowering</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="functional_lifting" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="functional_lifting" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="functional_lifting" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Steering response</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="functional_steering" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="functional_steering" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="functional_steering" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Braking performance</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="functional_braking" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="functional_braking" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="functional_braking" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Noise/vibration</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="functional_noise" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="functional_noise" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="functional_noise" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Load Test (If required)</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Rated load test</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="load_rated" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="load_rated" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="load_rated" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Stability check</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="load_stability" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="load_stability" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="load_stability" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">No hydraulic drift</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="load_drift" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="load_drift" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="load_drift" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Acceptable fork deflection</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="load_fork_deflection" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="load_fork_deflection" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="load_fork_deflection" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Non-Destructive Testing (NDT) (If required)</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">NDT performed on critical components (forks, mast, carriage, welds) using suitable methods (e.g., Magnetic Particle Testing (MT) / Dye Penetrant Testing (PT)).</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="ndt_performed" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="ndt_performed" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="ndt_performed" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Results acceptable (no cracks/defects), inspection conducted by certified personnel per ASNT.</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="ndt_results" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="ndt_results" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="ndt_results" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Final Assessment</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Pass / Fail / Conditional</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="final_assessment" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="final_assessment" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="final_assessment" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Defects list</span>
+                            <div class="checklist-item-opts">
+                                <label class="checklist-option pass"><input type="radio" name="final_defects" value="pass"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm5.3 8.3-6 6a1 1 0 0 1-1.4 0l-3-3a1 1 0 1 1 1.4-1.4l2.3 2.3 5.3-5.3a1 1 0 0 1 1.4 1.4Z"/></svg></span><span class="checklist-option-text">Pass</span></label>
+                                <label class="checklist-option fail"><input type="radio" name="final_defects" value="fail"><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm3.7 13.3a1 1 0 0 1 0 1.4 1 1 0 0 1-1.4 0L12 13.4l-2.3 2.3a1 1 0 0 1-1.4 0 1 1 0 0 1 0-1.4L10.6 12 8.3 9.7a1 1 0 0 1 1.4-1.4L12 10.6l2.3-2.3a1 1 0 0 1 1.4 1.4L13.4 12Z"/></svg></span><span class="checklist-option-text">Fail</span></label>
+                                <label class="checklist-option na"><input type="radio" name="final_defects" value="na" checked><span class="checklist-option-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm4 11H8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Z"/></svg></span><span class="checklist-option-text">N/A</span></label>
                             </div>
                         </div>
                     </div>
@@ -246,6 +897,7 @@
     <script src="https://unpkg.com/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.js"></script>
     <script src="../js/pdf-generator.js"></script>
     <script src="../js/form-navigation.js"></script>
+    <script src="../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const addDeficiencyBtn = document.getElementById('add-deficiency-btn');

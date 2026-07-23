@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <title>Settings - Hydro Inspection Platform</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/app_logo.svg" alt="Hydro Inspection Tool Logo" class="sidebar-logo">
+                <h2>Hydro Inspection Platform</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="inspection.html">Inspection Certificates</a></li>
+                <li><a href="settings.html" class="active">Settings</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="sidebar-info">
+                    <p><strong>Version:</strong> 1.0.0</p>
+                    <p class="privacy-notice">Your data is safe. This application runs entirely on your local machine.</p>
+                </div>
+                <p>&copy; 2026 Hydra 7H!</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>Settings</h1>
+            <form id="settings-form">
+                <div class="form-group">
+                    <label for="theme">Theme</label>
+                    <select id="theme" name="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email_notifications">Email Notifications</label>
+                    <label class="switch">
+                        <input type="checkbox" id="email_notifications" name="email_notifications" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" name="company_name" value="Your Company Name">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Save Settings</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('settings-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Settings saved!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Navy Blue Shield Container -->
+  <path d="M64 10L22 26V58C22 86.2 40.2 110 64 118C87.8 110 106 86.2 106 58V26L64 10Z" fill="#0F172A" stroke="#1E293B" stroke-width="3" stroke-linejoin="round"/>
+  
+  <!-- Subtle Inset Shield Border -->
+  <path d="M64 18L28 32V56C28 79.5 43.1 99.2 64 106C84.9 99.2 100 79.5 100 56V32L64 18Z" fill="none" stroke="#334155" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- Minimalist Professional Forklift -->
+  <!-- Cab / Guard -->
+  <path d="M44 52H64L58 70H44V52Z" fill="none" stroke="#F8FAFC" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M48 56H58L55 65H48V56Z" fill="#1E293B"/>
+  
+  <!-- Main Body & Counterweight -->
+  <path d="M38 70H70C72.2 70 74 71.8 74 74V82H36V72C36 70.9 36.9 70 38 70Z" fill="#2563EB"/>
+  
+  <!-- Mast & Carriage -->
+  <rect x="74" y="42" width="3" height="40" rx="1" fill="#94A3B8"/>
+  <path d="M77 66H86V82H90V85H77V66Z" fill="#EAB308"/>
+
+  <!-- Precision Wheels -->
+  <circle cx="46" cy="85" r="7" fill="#0F172A" stroke="#F8FAFC" stroke-width="2"/>
+  <circle cx="46" cy="85" r="2.5" fill="#94A3B8"/>
+  <circle cx="68" cy="85" r="5" fill="#0F172A" stroke="#F8FAFC" stroke-width="2"/>
+  <circle cx="68" cy="85" r="2" fill="#94A3B8"/>
+
+  <!-- Verification Badge -->
+  <circle cx="88" cy="34" r="11" fill="#16A34A" stroke="#0F172A" stroke-width="3"/>
+  <path d="M83.5 34L86.5 37L92.5 31" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

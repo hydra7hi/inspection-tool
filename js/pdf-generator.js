@@ -40,6 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
+            const checklistItems = Array.from(document.querySelectorAll('#checklist .checklist-group')).flatMap(group => {
+                const groupName = group.querySelector('h3')?.textContent.trim() || 'Checklist';
+                return Array.from(group.querySelectorAll('.checklist-item')).map(item => ({
+                    group: groupName,
+                    description: item.querySelector('.checklist-item-desc')?.textContent.trim() || '',
+                    status: item.querySelector('input[type="radio"]:checked')?.value || 'na',
+                }));
+            });
+
             const formData = {
                 // Client Info
                 client_name: document.getElementById('client_name').value,
@@ -63,10 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 equipment_id_no: document.getElementById('equipment_id_no').value,
                 manufacturing_date: document.getElementById('manufacturing_date').value,
                 // Checklist
-                chassis_check: document.querySelector('input[name="chassis_check"]:checked')?.value,
-                tire_check: document.querySelector('input[name="tire_check"]:checked')?.value,
-                brake_test: document.querySelector('input[name="brake_test"]:checked')?.value,
-                alarm_test: document.querySelector('input[name="alarm_test"]:checked')?.value,
+                checklist_items: checklistItems,
                 // Review & Submit
                 tested_load_kg: document.getElementById('tested_load_kg').value,
                 final_result: document.getElementById('final_result').value,
@@ -178,36 +184,27 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Checklist Table
-            const checklistData = {
-                'Safety & Site Preparation': [
-                    { description: 'Chassis and Body', pass: true, fail: false, na: false, remark: 'No visible damage' },
-                    { description: 'Tires and Wheels', pass: true, fail: false, na: false, remark: 'Properly inflated' },
-                ],
-                'Visual Structural Inspection': [
-                    { description: 'Brake System', pass: false, fail: true, na: false, remark: 'Needs repair' },
-                    { description: 'Alarms and Horns', pass: true, fail: false, na: false, remark: 'Functional' },
-                    { description: 'Lights', pass: true, fail: false, na: false, remark: 'All working' },
-                ],
-                'Functional & Operational Test': [
-                    { description: 'Engine/Motor', pass: true, fail: false, na: false, remark: 'No leaks' },
-                    { description: 'Hydraulic System', pass: true, fail: false, na: false, remark: 'No leaks' },
-                    { description: 'Steering', pass: true, fail: false, na: false, remark: 'Smooth operation' },
-                ]
-            };
+            const groupedChecklist = formData.checklist_items.reduce((acc, item) => {
+                if (!acc[item.group]) {
+                    acc[item.group] = [];
+                }
+                acc[item.group].push(item);
+                return acc;
+            }, {});
 
             const tableBody = [];
-            for (const group in checklistData) {
+            Object.entries(groupedChecklist).forEach(([group, items]) => {
                 tableBody.push([{ content: group, colSpan: 5, styles: { fontStyle: 'bold', fillColor: [230, 230, 230] } }]);
-                checklistData[group].forEach(item => {
+                items.forEach(item => {
                     tableBody.push([
                         item.description,
-                        item.pass ? '☑' : '☐',
-                        item.fail ? '☑' : '☐',
-                        item.na ? '☑' : '☐',
-                        item.remark
+                        item.status === 'pass' ? '☑' : '☐',
+                        item.status === 'fail' ? '☑' : '☐',
+                        item.status === 'na' ? '☑' : '☐',
+                        ''
                     ]);
                 });
-            }
+            });
 
             doc.autoTable({
                 startY: doc.autoTable.previous.finalY + 10,
