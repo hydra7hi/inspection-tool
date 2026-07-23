@@ -1,26 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const { jsPDF } = window.jspdf;
 
-    const tabButtons = document.querySelectorAll('.tab-nav-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const tabId = button.dataset.tab;
-
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            tabContents.forEach(content => {
-                if (content.id === tabId) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-        });
-    });
-
     const inspectionForm = document.getElementById('inspection-form');
     if (inspectionForm) {
         inspectionForm.addEventListener('submit', function (event) {
@@ -30,6 +10,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Please fill out all required fields before generating the PDF.');
                 return;
             }
+
+            const deficiencies = [];
+            const deficiencyRows = document.querySelectorAll('.deficiency-row');
+            deficiencyRows.forEach((row, index) => {
+                const desc = row.querySelector('input[name="deficiency_desc[]"]').value;
+                const action = row.querySelector('input[name="deficiency_action[]"]').value;
+                const status = row.querySelector('select[name="deficiency_status[]"]').value;
+                if (desc) { // Only add if description is not empty
+                    deficiencies.push({
+                        id: index + 1,
+                        description: desc,
+                        action: action,
+                        status: status,
+                    });
+                }
+            });
+
+            const attachments = [];
+            const attachmentItems = document.querySelectorAll('.attachment-preview-item');
+            attachmentItems.forEach(item => {
+                const img = item.querySelector('img');
+                const caption = item.querySelector('input').value;
+                if (img) {
+                    attachments.push({
+                        src: img.src,
+                        caption: caption
+                    });
+                }
+            });
 
             const formData = {
                 // Client Info
@@ -62,6 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 tested_load_kg: document.getElementById('tested_load_kg').value,
                 final_result: document.getElementById('final_result').value,
                 inspector_name: document.getElementById('inspector_name').value,
+                notes: document.getElementById('notes').value,
+                deficiencies: deficiencies,
+                attachments: attachments,
             };
 
             const doc = new jsPDF();
@@ -154,27 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 doc.text("DOC-CTRL-001 | REV 1.0 | 2024-07-15", doc.internal.pageSize.getWidth() / 2, footerY + 10, { align: 'center' });
             };
 
-            footer();
-
-            // Page 2: Attachments
-            doc.addPage();
-            doc.setFontSize(16);
-            doc.setFont('helvetica', 'bold');
-            doc.text("Attached picture:", 20, 20);
-
-            const rectX = 20;
-            const rectY = 30;
-            const rectWidth = doc.internal.pageSize.getWidth() - 40;
-            const rectHeight = 200;
-            doc.rect(rectX, rectY, rectWidth, rectHeight);
-            doc.setFontSize(20);
-            doc.setTextColor(150);
-            doc.text("Image placeholder", doc.internal.pageSize.getWidth() / 2, rectY + rectHeight / 2, { align: 'center' });
-            doc.setTextColor(0);
-
-            footer();
-
-            // Page 3: Checklist Header
+            // Page 2: Checklist Header
             doc.addPage();
             doc.autoTable({
                 startY: 20,
@@ -227,9 +219,80 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
+            // Page 3: Deficiencies and Notes
+            doc.addPage();
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Deficiencies", 20, 20);
+
+            doc.autoTable({
+                startY: 30,
+                head: [['Item #', 'Deficiency', 'Corrective Action', 'Status']],
+                body: formData.deficiencies.map(d => [d.id, d.description, d.action, d.status]),
+                ...tableStyles,
+            });
+
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Notes", 20, doc.autoTable.previous.finalY + 10);
+
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+            doc.text(formData.notes, 20, doc.autoTable.previous.finalY + 20, { maxWidth: doc.internal.pageSize.getWidth() - 40 });
+
+            footer();
+
+            // Page 4: Attachments
+            doc.addPage();
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Attachments", 20, 20);
+
+            let y = 30;
+            for (const attachment of formData.attachments) {
+                const img = new Image();
+                img.src = attachment.src;
+                const imgWidth = 100;
+                const imgHeight = (img.height * imgWidth) / img.width;
+
+                if (y + imgHeight + 20 > doc.internal.pageSize.getHeight()) {
+                    doc.addPage();
+                    y = 20;
+                }
+
+                doc.addImage(img, 'JPEG', 20, y, imgWidth, imgHeight);
+                y += imgHeight + 5;
+                doc.setFontSize(10);
+                doc.setFont('helvetica', 'normal');
+                doc.text(attachment.caption, 20, y, { maxWidth: imgWidth });
+                y += 15;
+            }
+
+            footer();
+
+            footer();
+
+            // Page 5: Summary
+            doc.addPage();
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Summary", 20, 20);
+
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Final Result:", 20, 30);
+            doc.setFont('helvetica', 'normal');
+            doc.text(formData.final_result, 60, 30);
+
+            doc.setFont('helvetica', 'bold');
+            doc.text("Inspector:", 20, 40);
+            doc.setFont('helvetica', 'normal');
+            doc.text(formData.inspector_name, 60, 40);
+
+
             // Load Test Details
             doc.autoTable({
-                startY: doc.autoTable.previous.finalY + 10,
+                startY: 50,
                 head: [['Load Test Details', '', '', '']],
                 body: [
                     ['Load Centre', '500 mm', 'Rated Load', '5000 kg'],
@@ -254,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
             doc.setFontSize(10);
             doc.setFont('helvetica', 'bold');
             doc.text("Your Company Name", stickerX + 40, stickerY + 10, { align: 'center' });
-            
+
             // QR Code Placeholder
             const qrCodeX = stickerX + 5;
             const qrCodeY = stickerY + 15;
@@ -270,6 +333,8 @@ document.addEventListener('DOMContentLoaded', function () {
             doc.text(`Serial No: ${formData.equipment_serial_no}`, qrCodeX + qrCodeSize + 5, qrCodeY + 10);
             doc.text(`ID No: ${formData.equipment_id_no}`, qrCodeX + qrCodeSize + 5, qrCodeY + 15);
             doc.text(`Valid Until: ${formData.next_inspection_date}`, qrCodeX + qrCodeSize + 5, qrCodeY + 20);
+
+            footer();
 
             doc.save(`Inspection-Certificate-${formData.certificate_no}.pdf`);
         });

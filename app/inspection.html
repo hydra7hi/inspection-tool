@@ -28,6 +28,8 @@
                     <button type="button" class="tab-nav-btn" data-tab="tracking">Tracking</button>
                     <button type="button" class="tab-nav-btn" data-tab="equipment">Equipment</button>
                     <button type="button" class="tab-nav-btn" data-tab="checklist">Checklist</button>
+                    <button type="button" class="tab-nav-btn" data-tab="deficiencies">Deficiencies & Notes</button>
+                    <button type="button" class="tab-nav-btn" data-tab="attachments">Attachments</button>
                     <button type="button" class="tab-nav-btn" data-tab="review">Review & Submit</button>
                 </div>
 
@@ -47,6 +49,9 @@
                     <div class="form-group">
                         <label for="location">Location</label>
                         <input type="text" id="location" name="location" placeholder="Enter location of inspection" required>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
                     </div>
                 </div>
                 <div id="tracking" class="tab-content">
@@ -77,6 +82,10 @@
                     <div class="form-group">
                         <label for="dws_no">DWS Number</label>
                         <input type="text" id="dws_no" name="dws_no" placeholder="Enter DWS number" required>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary back-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
                     </div>
                 </div>
                 <div id="equipment" class="tab-content">
@@ -123,6 +132,10 @@
                         <label for="manufacturing_date">Manufacturing Date</label>
                         <input type="date" id="manufacturing_date" name="manufacturing_date" required>
                     </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary back-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
+                    </div>
                 </div>
                 <div id="checklist" class="tab-content">
                     <div class="checklist-group">
@@ -163,6 +176,43 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary back-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
+                    </div>
+                </div>
+                <div id="deficiencies" class="tab-content">
+                    <div class="form-group">
+                        <h3>Deficiencies</h3>
+                        <div id="deficiencies-section">
+                            <div id="deficiencies-rows">
+                                <!-- Dynamic rows will be inserted here -->
+                            </div>
+                            <button type="button" id="add-deficiency-btn" class="btn">Add Deficiency</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h3>Notes</h3>
+                        <div id="notes-section">
+                            <textarea id="notes" name="notes" rows="5" placeholder="Enter any notes here"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary back-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
+                    </div>
+                </div>
+                <div id="attachments" class="tab-content">
+                    <div class="form-group">
+                        <h3>Attachments</h3>
+                        <label for="attachments-input">Upload Images</label>
+                        <input type="file" id="attachments-input" multiple accept="image/*">
+                        <div id="attachments-preview" class="attachments-preview"></div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary back-btn">Back</button>
+                        <button type="button" class="btn btn-primary next-btn">Next</button>
+                    </div>
                 </div>
                 <div id="review" class="tab-content">
                     <div class="form-group">
@@ -183,14 +233,74 @@
                             <option value="Jane Smith">Jane Smith</option>
                         </select>
                     </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary back-btn">Back</button>
+                        <button type="submit" id="generate-pdf-btn" class="btn btn-primary">Generate PDF</button>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Generate PDF</button>
-            </form>
+                </form>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.js"></script>
     <script src="../js/pdf-generator.js"></script>
+    <script src="../js/form-navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const addDeficiencyBtn = document.getElementById('add-deficiency-btn');
+            const deficienciesRows = document.getElementById('deficiencies-rows');
+            let deficiencyCounter = 0;
+
+            addDeficiencyBtn.addEventListener('click', function () {
+                deficiencyCounter++;
+                const newRow = document.createElement('div');
+                newRow.classList.add('deficiency-row');
+                newRow.innerHTML = `
+                    <div class="form-group">
+                        <label>Deficiency #${deficiencyCounter}</label>
+                        <input type="text" name="deficiency_desc[]" placeholder="Description">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="deficiency_action[]" placeholder="Corrective Action">
+                    </div>
+                    <div class="form-group">
+                        <select name="deficiency_status[]">
+                            <option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-danger remove-deficiency-btn">Remove</button>
+                `;
+                deficienciesRows.appendChild(newRow);
+            });
+
+            deficienciesRows.addEventListener('click', function (e) {
+                if (e.target && e.target.classList.contains('remove-deficiency-btn')) {
+                    e.target.closest('.deficiency-row').remove();
+                }
+            });
+
+            const attachmentsInput = document.getElementById('attachments-input');
+            const attachmentsPreview = document.getElementById('attachments-preview');
+
+            attachmentsInput.addEventListener('change', function () {
+                attachmentsPreview.innerHTML = ''; // Clear existing previews
+                for (const file of this.files) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const previewWrapper = document.createElement('div');
+                        previewWrapper.classList.add('attachment-preview-item');
+                        previewWrapper.innerHTML = `
+                            <img src="${e.target.result}" alt="${file.name}">
+                            <input type="text" name="attachment_caption[]" placeholder="Enter caption">
+                        `;
+                        attachmentsPreview.appendChild(previewWrapper);
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

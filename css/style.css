@@ -237,3 +237,51 @@ h1, h2 {
 .checklist-item-opts input[type="radio"] {
     margin-right: 5px;
 }
+
+.deficiency-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.deficiency-row .form-group {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.btn-danger {
+    background-color: #e24a4a;
+}
+
+.btn-danger:hover {
+    background-color: #c93030;
+}
+
+.attachments-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.attachment-preview-item {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    text-align: center;
+}
+
+.attachment-preview-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+
+.attachment-preview-item input {
+    width: 100%;
+    box-sizing: border-box;
+}
