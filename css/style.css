@@ -142,3 +142,40 @@ h1, h2 {
     padding: 15px;
     font-size: 1.1rem;
 }
+
+/* Tab Navigation */
+.tab-nav {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-nav-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #888;
+    position: relative;
+    top: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-nav-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.tab-content.active {
+    display: block;
+}

@@ -23,22 +23,30 @@
         <div class="main-content">
             <h1>New Inspection Certificate</h1>
             <form id="inspection-form">
-                <div class="form-group">
-                    <label for="inspector-name">Inspector Name</label>
-                    <input type="text" id="inspector-name" placeholder="Enter inspector's full name" required>
+                <div class="tab-nav">
+                    <button type="button" class="tab-nav-btn active" data-tab="client">Client</button>
+                    <button type="button" class="tab-nav-btn" data-tab="tracking">Tracking</button>
+                    <button type="button" class="tab-nav-btn" data-tab="equipment">Equipment</button>
+                    <button type="button" class="tab-nav-btn" data-tab="checklist">Checklist</button>
+                    <button type="button" class="tab-nav-btn" data-tab="review">Review & Submit</button>
                 </div>
-                <div class="form-group">
-                    <label for="inspection-date">Inspection Date</label>
-                    <input type="date" id="inspection-date" required>
+
+                <div id="client" class="tab-content active">
+                    <!-- Client content will go here -->
                 </div>
-                <div class="form-group">
-                    <label for="equipment-id">Equipment ID</label>
-                    <input type="text" id="equipment-id" placeholder="e.g., EQ-12345" required>
+                <div id="tracking" class="tab-content">
+                    <!-- Tracking content will go here -->
                 </div>
-                <div class="form-group">
-                    <label for="notes">Notes & Observations</label>
-                    <textarea id="notes" placeholder="Add any relevant notes..." rows="5"></textarea>
+                <div id="equipment" class="tab-content">
+                    <!-- Equipment content will go here -->
                 </div>
+                <div id="checklist" class="tab-content">
+                    <!-- Checklist content will go here -->
+                </div>
+                <div id="review" class="tab-content">
+                    <!-- Review & Submit content will go here -->
+                </div>
+
                 <button type="submit" class="btn btn-primary">Generate PDF</button>
             </form>
         </div>
