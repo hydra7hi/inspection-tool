@@ -1,9 +1,50 @@
 document.addEventListener('DOMContentLoaded', function () {
     const { jsPDF } = window.jspdf;
+    const SETTINGS_KEY = 'inspection_tool_settings';
+
+    const readSettings = () => {
+        try {
+            return JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
+        } catch (error) {
+            console.warn('Unable to read PDF settings', error);
+            return {};
+        }
+    };
+
+    const resolveLogoPath = (logoPath) => {
+        const value = (logoPath || 'company_logo.svg').trim();
+        if (!value) {
+            return '../assets/company_logo.svg';
+        }
+        if (/^https?:\/\//i.test(value) || value.startsWith('/') || value.startsWith('./') || value.startsWith('../')) {
+            return value;
+        }
+        if (value.startsWith('assets/')) {
+            return `../${value}`;
+        }
+        return `../assets/${value}`;
+    };
+
+    const loadLogoImage = (logoPath) => {
+        return new Promise((resolve) => {
+            const resolvedPath = resolveLogoPath(logoPath);
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                resolve(canvas.toDataURL('image/png'));
+            };
+            img.onerror = () => resolve(null);
+            img.src = resolvedPath;
+        });
+    };
 
     const inspectionForm = document.getElementById('inspection-form');
     if (inspectionForm) {
-        inspectionForm.addEventListener('submit', function (event) {
+        inspectionForm.addEventListener('submit', async function (event) {
             event.preventDefault();
 
             if (!inspectionForm.checkValidity()) {
@@ -82,13 +123,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 attachments: attachments,
             };
 
+            const settings = readSettings();
+            const companyName = settings.company_name || 'Your Company Name';
+            const logoDataUrl = await loadLogoImage(settings.company_logo);
+
             const doc = new jsPDF();
             doc.setFont('helvetica');
 
-            // Add Company Name and Title
+            // Add Company Logo and Title
+            if (logoDataUrl) {
+                doc.addImage(logoDataUrl, 'PNG', 14, 10, 32, 20);
+            }
             doc.setFontSize(22);
             doc.setFont('helvetica', 'bold');
-            doc.text("Your Company Name", doc.internal.pageSize.getWidth() / 2, 20, { align: 'center' });
+            doc.text(companyName, doc.internal.pageSize.getWidth() / 2, 20, { align: 'center' });
             doc.setFontSize(16);
             doc.setFont('helvetica', 'normal');
             doc.text("INSPECTION CERTIFICATE", doc.internal.pageSize.getWidth() / 2, 30, { align: 'center' });
@@ -167,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const pageHeight = doc.internal.pageSize.getHeight();
                 const footerY = pageHeight - 20;
                 doc.setFontSize(8);
-                doc.text("This certificate is the property of Your Company Name and must be returned upon request.", doc.internal.pageSize.getWidth() / 2, footerY, { align: 'center' });
+                doc.text(`This certificate is the property of ${companyName} and must be returned upon request.`, doc.internal.pageSize.getWidth() / 2, footerY, { align: 'center' });
                 doc.text("Contact: info@yourcompany.com | +123 456 7890", doc.internal.pageSize.getWidth() / 2, footerY + 5, { align: 'center' });
                 doc.text("DOC-CTRL-001 | REV 1.0 | 2024-07-15", doc.internal.pageSize.getWidth() / 2, footerY + 10, { align: 'center' });
             };
@@ -313,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
             doc.rect(stickerX, stickerY, 80, 50);
             doc.setFontSize(10);
             doc.setFont('helvetica', 'bold');
-            doc.text("Your Company Name", stickerX + 40, stickerY + 10, { align: 'center' });
+            doc.text(companyName, stickerX + 40, stickerY + 10, { align: 'center' });
 
             // QR Code Placeholder
             const qrCodeX = stickerX + 5;

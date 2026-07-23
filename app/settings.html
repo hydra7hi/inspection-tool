@@ -53,14 +53,37 @@
                     <input type="text" id="company_name" name="company_name" value="Your Company Name">
                 </div>
                 <div class="form-group">
+                    <label for="company_logo">Company Logo</label>
+                    <input type="text" id="company_logo" name="company_logo" value="company_logo.svg" placeholder="company_logo.svg">
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn">Save Settings</button>
                 </div>
             </form>
         </div>
     </div>
     <script>
+        const SETTINGS_KEY = 'inspection_tool_settings';
+
+        const loadSettings = () => {
+            try {
+                const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
+                document.getElementById('company_name').value = saved.company_name || 'Your Company Name';
+                document.getElementById('company_logo').value = saved.company_logo || 'company_logo.svg';
+            } catch (error) {
+                console.warn('Unable to load settings', error);
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', loadSettings);
+
         document.getElementById('settings-form').addEventListener('submit', function(e) {
             e.preventDefault();
+            const settings = {
+                company_name: document.getElementById('company_name').value,
+                company_logo: document.getElementById('company_logo').value
+            };
+            localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
             alert('Settings saved!');
         });
     </script>
