@@ -8,4 +8,3 @@ As a user, I want to
 ---
 
 # Execution:
-<intentionally left empty>
