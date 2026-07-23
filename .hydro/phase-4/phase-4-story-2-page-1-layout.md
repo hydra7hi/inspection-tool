@@ -3,13 +3,13 @@ As a developer, I want to generate the main layout of the first page of the PDF 
 
 ---
 # Plan:
-- [ ] In `/js/pdf-generator.js`, add a function to create the first page.
-- [ ] Add the company name and a centered title "INSPECTION CERTIFICATE".
-- [ ] Implement a 4-column grid layout for the following sections:
+- [x] In `/js/pdf-generator.js`, add a function to create the first page.
+- [x] Add the company name and a centered title "INSPECTION CERTIFICATE".
+- [x] Implement a 4-column grid layout for the following sections:
     - Client Information
     - Certificate Metadata
     - Equipment Description
-- [ ] Populate the grids with the collected form data.
+- [x] Populate the grids with the collected form data.
 
 ---
 
