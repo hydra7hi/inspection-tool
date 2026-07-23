@@ -285,3 +285,34 @@ h1, h2 {
     width: 100%;
     box-sizing: border-box;
 }
+
+/* User List Table */
+.user-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.user-list th,
+.user-list td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-list thead {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: var(--font-heading);
+}
+
+.user-list tbody tr:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+.user-list tbody tr:hover {
+    background-color: #e9ecef;
+}
