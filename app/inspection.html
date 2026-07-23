@@ -165,7 +165,24 @@
                     </div>
                 </div>
                 <div id="review" class="tab-content">
-                    <!-- Review & Submit content will go here -->
+                    <div class="form-group">
+                        <label for="tested_load_kg">Tested Load (kg)</label>
+                        <input type="text" id="tested_load_kg" name="tested_load_kg" placeholder="Enter tested load in kg">
+                    </div>
+                    <div class="form-group">
+                        <label for="final_result">Final Result</label>
+                        <select id="final_result" name="final_result">
+                            <option value="Accepted">Accepted</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inspector_name">Inspector Name</label>
+                        <select id="inspector_name" name="inspector_name">
+                            <option value="John Doe">John Doe</option>
+                            <option value="Jane Smith">Jane Smith</option>
+                        </select>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Generate PDF</button>
