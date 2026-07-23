@@ -125,7 +125,44 @@
                     </div>
                 </div>
                 <div id="checklist" class="tab-content">
-                    <!-- Checklist content will go here -->
+                    <div class="checklist-group">
+                        <h3>Visual Inspection</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Check for cracks or damage on chassis</span>
+                            <div class="checklist-item-opts">
+                                <label><input type="radio" name="chassis_check" value="pass"> Pass</label>
+                                <label><input type="radio" name="chassis_check" value="fail"> Fail</label>
+                                <label><input type="radio" name="chassis_check" value="na"> N/A</label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Inspect tire condition and pressure</span>
+                            <div class="checklist-item-opts">
+                                <label><input type="radio" name="tire_check" value="pass"> Pass</label>
+                                <label><input type="radio" name="tire_check" value="fail"> Fail</label>
+                                <label><input type="radio" name="tire_check" value="na"> N/A</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checklist-group">
+                        <h3>Functional Tests</h3>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Test brake effectiveness</span>
+                            <div class="checklist-item-opts">
+                                <label><input type="radio" name="brake_test" value="pass"> Pass</label>
+                                <label><input type="radio" name="brake_test" value="fail"> Fail</label>
+                                <label><input type="radio" name="brake_test" value="na"> N/A</label>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <span class="checklist-item-desc">Check horn and reverse alarm</span>
+                            <div class="checklist-item-opts">
+                                <label><input type="radio" name="alarm_test" value="pass"> Pass</label>
+                                <label><input type="radio" name="alarm_test" value="fail"> Fail</label>
+                                <label><input type="radio" name="alarm_test" value="na"> N/A</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="review" class="tab-content">
                     <!-- Review & Submit content will go here -->

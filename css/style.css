@@ -187,3 +187,53 @@ h1, h2 {
 .tab-content.active {
     display: block;
 }
+
+/* Checklist Styling */
+.checklist-group {
+    margin-bottom: 30px;
+}
+
+.checklist-group h3 {
+    font-size: 1.2rem;
+    color: var(--dark-bg);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.checklist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s;
+    margin-bottom: 10px;
+}
+
+.checklist-item:hover {
+    background-color: #f8f9fa;
+}
+
+.checklist-item-desc {
+    flex-grow: 1;
+    color: #333;
+}
+
+.checklist-item-opts {
+    display: flex;
+    gap: 15px;
+    min-width: 200px;
+    justify-content: flex-end;
+}
+
+.checklist-item-opts label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.checklist-item-opts input[type="radio"] {
+    margin-right: 5px;
+}
