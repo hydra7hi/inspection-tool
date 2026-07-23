@@ -20,25 +20,24 @@ More effort / time for the PDF Generation, more on that soon.
 
 ---
 # Plan:
-- [ ] **Phase 1: Foundational HTML & CSS Structure**
-  - [ ] **`/index.html`**: Create the public-facing landing page.
-    - [ ] Story: As a new visitor, I want to see a simple page explaining the tool with a "Continue as a guest" button.
-  - [ ] **`/app/dashboard.html`**: Create the main application page.
-    - [ ] Story: As a user, after clicking "Continue as a guest", I want to be taken to a dashboard page.
-  - [ ] **`/css/style.css`**: Create a single stylesheet for basic styling.
-    - [ ] Story: As a user, I want a clean and consistent layout across the landing page and the dashboard.
-  - [ ] **Sidebar (in `app/dashboard.html`)**: Implement the navigation within the main app page.
-    - [ ] Story: As a user, I want to see a sidebar on the dashboard with links for "Users", "Inspection Certificates", "Settings", and "About".
+- [x] **Phase 1: Foundational HTML & CSS Structure**
+  - [x] **`/index.html`**: Create the public-facing landing page.
+    - [x] Story: As a new visitor, I want to see a simple page explaining the tool with a "Continue as a guest" button.
+  - [x] **`/app/dashboard.html`**: Create the main application page.
+    - [x] Story: As a user, after clicking "Continue as a guest", I want to be taken to a dashboard page.
+  - [x] **`/css/style.css`**: Create a single stylesheet for basic styling.
+    - [x] Story: As a user, I want a clean and consistent layout across the landing page and the dashboard.
+  - [x] **Sidebar (in `app/dashboard.html`)**: Implement the navigation within the main app page.
+    - [x] Story: As a user, I want to see a sidebar on the dashboard with links for "Users", "Inspection Certificates", "Settings", and "About".
 
-- [ ] **Phase 2: PDF Generation with JavaScript**
-  - [ ] **`/app/inspection.html`**: Create the form page for certificate data entry.
-    - [ ] Story: As a user, I want a dedicated page with a form to enter inspection details.
-  - [ ] **`/js/pdf-generator.js`**: Implement the core PDF creation logic.
-    - [ ] Story: As a developer, I need to integrate a JavaScript library (like `jsPDF`) to handle PDF creation.
-    - [ ] Story: As a user, I want to click a "Generate PDF" button on the inspection form page.
-    - [ ] Story: As a user, when I click the generate button, I want the system to create and download a PDF based on the data I entered.
+- [x] **Phase 2: PDF Generation with JavaScript**
+  - [x] **`/app/inspection.html`**: Create the form page for certificate data entry.
+    - [x] Story: As a user, I want a dedicated page with a form to enter inspection details.
+  - [x] **`/js/pdf-generator.js`**: Implement the core PDF creation logic.
+    - [x] Story: As a developer, I need to integrate a JavaScript library (like `jsPDF`) to handle PDF creation.
+    - [x] Story: As a user, I want to click a "Generate PDF" button on the inspection form page.
+    - [x] Story: As a user, when I click the generate button, I want the system to create and download a PDF based on the data I entered.
 
 ---
 
 # Execution:
-<left empty>

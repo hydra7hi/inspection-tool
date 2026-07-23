@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <title>New Inspection - Inspection Tool</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#">Users</a></li>
+                <li><a href="inspection.html">Inspection Certificates</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>New Inspection Certificate</h1>
+            <form id="inspection-form">
+                <div class="form-group">
+                    <label for="inspector-name">Inspector Name</label>
+                    <input type="text" id="inspector-name" placeholder="Enter inspector's full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="inspection-date">Inspection Date</label>
+                    <input type="date" id="inspection-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="equipment-id">Equipment ID</label>
+                    <input type="text" id="equipment-id" placeholder="e.g., EQ-12345" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes & Observations</label>
+                    <textarea id="notes" placeholder="Add any relevant notes..." rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Generate PDF</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../js/pdf-generator.js"></script>
+</body>
+</html>
