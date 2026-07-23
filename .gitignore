@@ -1,0 +1,14 @@
+# Node.js dependencies
+node_modules/
+
+# Local project management files from .hydro
+# .hydro/
+template/
+
+# IDE configuration folders
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
