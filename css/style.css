@@ -22,14 +22,243 @@ body {
     letter-spacing: 0.01em;
 }
 
-.container {
-    max-width: 960px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+.landing-page {
+    background: linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%);
+}
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 60px 24px 40px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    line-height: 1.12;
+    margin: 0 0 16px;
+    color: #10233f;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.hero-copy {
+    font-size: 1.05rem;
+    max-width: 620px;
+    color: #40556f;
+    margin-bottom: 24px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #5ca7ff);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(74, 144, 226, 0.25);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: var(--primary-color);
+    border: 1px solid #d7e7ff;
+}
+
+.btn-glow {
+    background: linear-gradient(135deg, #ffb347, #ff7f50);
+    color: #fff;
+    box-shadow: 0 0 0 0 rgba(255, 127, 80, 0.4), 0 14px 30px rgba(255, 127, 80, 0.25);
+    animation: pulseGlow 2s infinite;
+}
+
+.hero-panel {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-panel-card,
+.visual-card,
+.report-card,
+.metrics-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(16, 35, 63, 0.12);
+}
+
+.hero-panel-card {
+    width: min(100%, 420px);
+    padding: 28px;
+}
+
+.hero-panel-card h3 {
+    margin-top: 0;
+    color: #10233f;
+}
+
+.hero-panel-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #40556f;
+}
+
+.hero-panel-card li + li {
+    margin-top: 8px;
+}
+
+.marketing-sections {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 20px 24px 60px;
+}
+
+.marketing-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+    padding: 34px 0;
+}
+
+.marketing-row.reverse {
+    direction: rtl;
+}
+
+.marketing-row.reverse > * {
+    direction: ltr;
+}
+
+.marketing-copy h2 {
+    font-size: clamp(1.5rem, 2.3vw, 2.2rem);
+    margin: 0 0 12px;
+    color: #0f2340;
+}
+
+.marketing-copy p {
+    color: #55677b;
+    max-width: 560px;
+}
+
+.marketing-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.visual-card {
+    width: min(100%, 420px);
+    min-height: 240px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.visual-line {
+    height: 14px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #4a90e2, #8cc2ff);
+}
+
+.visual-line.short {
+    width: 70%;
+}
+
+.report-card {
+    padding: 22px;
+    min-height: 220px;
+    justify-content: flex-start;
+}
+
+.report-header {
+    height: 18px;
+    width: 60%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #10233f, #4a90e2);
+    margin-bottom: 18px;
+}
+
+.report-body {
+    display: grid;
+    gap: 10px;
+}
+
+.report-row {
+    height: 12px;
+    border-radius: 999px;
+    background: #eaf3ff;
+}
+
+.report-row.short {
+    width: 80%;
+}
+
+.metrics-card {
+    min-height: 220px;
+    padding: 24px;
+    justify-content: center;
+    gap: 16px;
+}
+
+.metric-pill {
+    height: 16px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #4a90e2, #76b6ff);
+}
+
+.metric-pill.large {
+    height: 28px;
+    width: 70%;
+}
+
+.landing-footer {
     text-align: center;
+    padding: 24px 24px 70px;
+}
+
+.landing-footer h2 {
+    margin-bottom: 8px;
+    color: #10233f;
+}
+
+.landing-footer p {
+    color: #55677b;
+    margin-bottom: 20px;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 127, 80, 0.4), 0 14px 30px rgba(255, 127, 80, 0.25); }
+    50% { box-shadow: 0 0 20px 8px rgba(255, 127, 80, 0.2), 0 18px 34px rgba(255, 127, 80, 0.3); }
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .marketing-row {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
 }
 
 h1, h2 {
