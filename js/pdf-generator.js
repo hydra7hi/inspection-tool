@@ -246,9 +246,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 items.forEach(item => {
                     tableBody.push([
                         item.description,
-                        item.status === 'pass' ? '☑' : '☐',
-                        item.status === 'fail' ? '☑' : '☐',
-                        item.status === 'na' ? '☑' : '☐',
+                        item.status === 'pass' ? 'X' : '',
+                        item.status === 'fail' ? 'X' : '',
+                        item.status === 'na' ? 'X' : '',
                         ''
                     ]);
                 });
